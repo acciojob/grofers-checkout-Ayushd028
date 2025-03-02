@@ -6,11 +6,10 @@ const getSum = () => {
 	const table = document.querySelector("table")
 	const prices = document.querySelectorAll(".price");
 	let sum = 0;
-	let sumPrice = prices.forEach((item)=>{
-			sum += parseFloat(item.textContent) || 0;
-		return sum;
+	prices.forEach((item)=>{
+		sum += parseFloat(item.textContent) || 0;
 	})
-	table.innerHTML += `<tr><td colspan = "2">Total Price: ${sumPrice}</td></tr>`
+	table.innerHTML += `<tr><td colspan = "2">Total Price: ${sum}</td></tr>`
 };
 
 getSumBtn.addEventListener("click", getSum);
